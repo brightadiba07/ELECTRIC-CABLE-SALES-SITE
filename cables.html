@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Our Cables</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="topnav">
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="cables.html">Cables</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<section>
+    <h2>Cable Categories</h2>
+
+    <article>
+        <h3>Single Core Cables</h3>
+        <p>Used for internal wiring and electrical appliances.</p>
+    </article>
+
+    <article>
+        <h3>Armoured Cables</h3>
+        <p>Suitable for underground and harsh environments.</p>
+    </article>
+    <article>
+        <p> <img src="wire.png" alt="wire image"> </p>
+
+    </article>
+
+    <article>
+        <h3>Flexible Cables</h3>
+        <p>Used for mobile devices and equipment.</p>
+    </article>
+</section>
+
+<section>
+<h2>Cable Price List</h2>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Cable Type</th>
+        <th>Size</th>
+        <th>Price per Meter</th>
+    </tr>
+    <tr>
+        <td>Single Core Copper</td>
+        <td>1.5mm</td>
+        <td>GHS 8</td>
+    </tr>
+    <tr>
+        <td>Flexible Cable</td>
+        <td>4mm</td>
+        <td>GHS 22</td>
+    </tr>
+    <tr>
+        <td>Armoured Cable</td>
+        <td>10mm</td>
+        <td>GHS 45</td>
+    </tr>
+</table>
+</section>
+
+<footer>
+    © 2025 ElectroCable GH Ltd.
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.topnav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+});
+</script>
+
+</body>
+</html>

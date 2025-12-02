@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="topnav">
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="cables.html">Cables</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<section>
+    <h2>Contact Form</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" required placeholder="Your full name"><br><br>
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com"><br><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required placeholder="Write your message here"></textarea><br><br>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<section>
+    <h2>Contact Details</h2>
+    <p><strong>Owner:</strong> Bright Adiba</p>
+    <p><strong>Phone:</strong> <a href="tel:0532800131">0532800131</a></p>
+    <p><strong>Email:</strong> <a href="mailto:brightadiba07@gmail.com">brightadiba07@gmail.com</a></p>
+
+    <h3>Find Us</h3>
+    <p>Our main warehouse is located at Spintex Road, Accra.</p>
+    <div class="map-placeholder">
+        Map Placeholder
+    </div>
+</section>
+
+<footer>
+    © 2025 ElectroCable GH Ltd.
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.topnav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+});
+</script>
+
+</body>
+</html>

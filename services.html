@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Services</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topnav">
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="cables.html">Cables</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<section>
+    <h2>Our Services</h2>
+    <ul>
+        <li>Wholesale cable supply</li>
+        <li>Electrical installation support</li>
+        <li>Technical consultations</li>
+        <li>Bulk order discounts</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How to Order (Steps)</h2>
+    <ol>
+        <li>Choose cable type and size</li>
+        <li>Request quotation</li>
+        <li>Confirm payment</li>
+        <li>Receive delivery</li>
+    </ol>
+</section>
+
+<footer>
+    © 2025 ElectroCable GH Ltd.
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.topnav');
+    if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+});
+</script>
+
+</body>
+</html>

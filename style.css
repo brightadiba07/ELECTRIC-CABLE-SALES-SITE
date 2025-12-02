@@ -1,0 +1,147 @@
+:root{
+    --bg: #fbfdff;
+    --accent: #ffd54a; /* warm highlight */
+    --primary: #0b63ff; /* brand blue */
+    --dark: #071735; /* deep navy for header/footer */
+    --muted: #6b7280;
+}
+
+*{box-sizing:border-box}
+body{
+    font-family: Inter, Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:#0b1530;
+    -webkit-font-smoothing:antialiased;
+}
+
+.topnav{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--dark);
+    padding:10px 14px;
+    flex-wrap:wrap;
+}
+
+.topnav .nav-toggle{
+    background:transparent;
+    border:0;
+    color:var(--accent);
+    font-size:22px;
+    display:none;
+}
+
+.topnav a{
+    color:var(--accent);
+    text-decoration:none;
+    padding:8px 12px;
+    font-weight:700;
+    border-radius:6px;
+}
+
+.topnav a:hover{background:rgba(255,213,74,0.12)}
+
+.hero{
+    background: linear-gradient(rgba(11,99,255,0.12), rgba(11,99,255,0.12)), url('wire.png') center/cover no-repeat;
+    height:360px;
+    display:flex;
+    align-items:center;
+    color:var(--accent);
+    text-shadow:0 2px 6px rgba(7,23,53,0.5);
+}
+
+.hero-content{max-width:1100px;margin:0 auto;padding:40px}
+.hero h1{font-size:2rem;margin:0}
+.hero-sub{margin-top:8px;color:#fff;opacity:0.95}
+
+section{max-width:1100px;margin:28px auto;padding:0 16px}
+
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.features article{background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 22px rgba(11,23,50,0.06)}
+.features h3{margin-top:0;color:var(--primary)}
+
+footer{background:var(--dark);color:var(--accent);text-align:center;padding:18px;margin-top:28px}
+
+img{max-width:100%;height:auto;border:4px solid var(--accent);border-radius:6px}
+
+table{width:100%;border-collapse:collapse;background:#fff}
+table th, table td{padding:12px;text-align:left;border-bottom:1px solid #f1f5f9}
+
+form input, form textarea{width:100%;padding:10px;border:1px solid #d6d9de;border-radius:8px;background:#fff}
+form button{background:var(--primary);color:#fff;border:0;padding:10px 16px;border-radius:8px;font-weight:700}
+
+.map-placeholder{background:#e9eefc;color:var(--muted);height:200px;text-align:center;padding-top:80px;border-radius:8px}
+
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+.testimonials blockquote{background:#fff;padding:14px 18px;border-left:4px solid var(--accent);margin:12px 0;border-radius:6px}
+
+@media (max-width:900px){
+    .features{grid-template-columns:repeat(2,1fr)}
+    .hero{height:320px}
+}
+
+@media (max-width:650px){
+    .topnav{justify-content:space-between}
+    .topnav .nav-toggle{display:inline-block}
+    .topnav a{display:none;width:100%}
+    .topnav.open a{display:block}
+    .features{grid-template-columns:1fr}
+    .hero{height:220px}
+    .hero h1{font-size:1.25rem}
+}
+
+/* Interactive & polished enhancements */
+:root{
+    --glass: rgba(255,255,255,0.65);
+    --nav-shadow: 0 6px 18px rgba(7,23,53,0.12);
+}
+
+/* smooth transitions everywhere */
+*{transition:all 220ms ease-in-out}
+
+/* sticky header with subtle blur */
+.topnav{position:sticky;top:0;backdrop-filter: blur(6px);z-index:9999;box-shadow:var(--nav-shadow)}
+
+/* Nav link underline animation */
+.topnav a{position:relative}
+.topnav a::after{content:"";position:absolute;left:12px;right:12px;height:3px;background:linear-gradient(90deg,var(--accent),var(--primary));bottom:6px;border-radius:6px;transform:scaleX(0);transform-origin:left center}
+.topnav a:hover::after,.topnav a:focus::after{transform:scaleX(1)}
+
+/* hero subtle float and shimmer */
+.hero{overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg, rgba(11,99,255,0.06), rgba(255,213,74,0.05));pointer-events:none;mix-blend-mode:overlay}
+.hero-content{animation:heroSlide 900ms cubic-bezier(.2,.9,.2,1) both}
+@keyframes heroSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* feature cards lift on hover */
+.features article{will-change:transform}
+.features article:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 18px 40px rgba(11,23,50,0.12)}
+
+/* CTA button gradient and hover */
+.btn{background:linear-gradient(90deg,var(--primary),#2a8cff);box-shadow:0 8px 24px rgba(11,99,255,0.12)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 22px 50px rgba(11,99,255,0.18)}
+
+/* make images interactive */
+img{transition:transform 320ms ease, box-shadow 220ms ease}
+img:hover{transform:scale(1.03);box-shadow:0 12px 30px rgba(7,23,53,0.08)}
+
+/* form focus styles */
+form input:focus, form textarea:focus{outline:none;box-shadow:0 8px 18px rgba(11,99,255,0.12);border-color:var(--primary)}
+.btn:focus, button:focus{outline:3px solid rgba(11,99,255,0.12)}
+
+/* testimonial accent and small animation */
+.testimonials blockquote{transform:translateY(6px);opacity:0;animation:fadeUp 700ms 220ms ease forwards}
+@keyframes fadeUp{to{transform:none;opacity:1}}
+
+/* subtle footer links */
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* utility */
+.muted{color:var(--muted)}
+
+/* improve mobile nav open animation */
+.topnav.open a{animation:navFade 220ms ease both}
+@keyframes navFade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
