@@ -38,6 +38,98 @@
     </ol>
 </section>
 
+<section class="services-overview">
+    <h2>Featured Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Wholesale Supply</h3>
+            <p>Large-volume cable supply with priority fulfillment and bulk discounts for contractors and retailers.</p>
+            <p><a class="btn" href="contact.html">Request Supply</a></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Installation Support</h3>
+            <p>On-site technical support and installation consultancy to ensure correct cable selection and safe installation.</p>
+            <p><a class="btn" href="contact.html">Get Support</a></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Testing & Certification</h3>
+            <p>We offer cable testing and certification services to ensure compliance with safety and performance standards.</p>
+            <p><a class="btn" href="contact.html">Book Test</a></p>
+        </div>
+
+        <div class="service-card">
+            <h3>Custom Orders</h3>
+            <p>Need specific lengths, colours or armouring? We work with manufacturers to build custom cable solutions.</p>
+            <p><a class="btn" href="contact.html">Custom Quote</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <h3>Standard</h3>
+            <div class="price">GHS 8 / m</div>
+            <ul>
+                <li>Retail quantities</li>
+                <li>Basic support</li>
+            </ul>
+            <p><a class="btn" href="contact.html">Order</a></p>
+        </div>
+
+        <div class="pricing-card popular">
+            <h3>Professional</h3>
+            <div class="price">GHS 20 / m</div>
+            <ul>
+                <li>Contractor volumes</li>
+                <li>Priority dispatch</li>
+                <li>Phone support</li>
+            </ul>
+            <p><a class="btn" href="contact.html">Get Quote</a></p>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <div class="price">Custom</div>
+            <ul>
+                <li>Full procurement</li>
+                <li>On-site logistics</li>
+                <li>Dedicated account manager</li>
+            </ul>
+            <p><a class="btn" href="contact.html">Contact Sales</a></p>
+        </div>
+    </div>
+</section>
+
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <button class="faq-question">Do you deliver nationwide?</button>
+        <div class="faq-answer">Yes — we deliver across Ghana. Delivery charges depend on order size and location.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Can I get a sample before ordering?</button>
+        <div class="faq-answer">We can provide samples for a small fee or free for some products. Contact us to request samples.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Do you offer installation services?</button>
+        <div class="faq-answer">We provide installation support and can recommend certified installers for your region.</div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2>Ready to place an order or need technical help?</h2>
+        <p>Contact Bright Adiba today for fast quotations and expert advice.</p>
+        <p><a class="btn" href="contact.html">Request a Quote</a></p>
+    </div>
+</section>
+
 <footer>
     © 2025 ElectroCable GH Ltd.
 </footer>
@@ -47,6 +139,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn = document.querySelector('.nav-toggle');
     const nav = document.querySelector('.topnav');
     if (btn && nav) btn.addEventListener('click', () => nav.classList.toggle('open'));
+    
+    // FAQ accordion behaviour
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+        q.addEventListener('click', () => {
+            const open = q.classList.contains('open');
+            // close all
+            document.querySelectorAll('.faq-question.open').forEach(x => { x.classList.remove('open'); x.nextElementSibling.style.maxHeight = null; });
+            if (!open) {
+                q.classList.add('open');
+                const ans = q.nextElementSibling;
+                ans.style.maxHeight = ans.scrollHeight + 'px';
+            }
+        });
+    });
 });
 </script>
 
